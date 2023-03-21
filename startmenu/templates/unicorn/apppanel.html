@@ -1,0 +1,21 @@
+<div>
+  {% load unicorn %}
+  <!-- put component code here -->
+  <div class="apppanel">
+    <div style="display: flex; align-items: center;">
+      {% unicorn 'appicon' %}
+      <div style="padding: 0 10px;">
+        <h2>{{ name }}</h2>
+        <span> {{ subtitle }} </span>
+      </div>
+    </div>
+    
+    <div style="display: flex; justify-content: flex-end;">
+      <a href="{% url redirect %}" class="common-button fill common-blue">
+        Go
+        <i class="eos-icons eos-18">double_arrow</i>
+      </a>
+    </div>
+    <div>{{ description }}</div>
+  </div>
+</div>

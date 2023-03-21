@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/eos-icons@latest/dist/css/eos-icons.css' />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Whisper</title>
+  </head>
+  <body>
+    <h1>Whisper</h1>
+    <p>
+        Whisperを使ってリアルタイム音声を文字起こしします。
+    </p>
+    <div>
+      
+      <form method="post">
+        <label>処理サーバ:
+          <input id='server' readonly value={{ server }}>
+        </label>
+      </form>
+    </div>
+    
+    <button class="button record" id="record" name="record">
+        <i id="mic" class='eos-icons eos-48'>settings_voice</i>
+    </button>
+    <div>
+      <audio id="player" controls></audio>
+    </div>
+    <div>
+      <textarea id="result" rows="20" cols="70">
+      </textarea>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/microphone.js' %}"></script>
+  </body>
+</html>

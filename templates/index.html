@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+{% load unicorn %}
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/eos-icons@latest/dist/css/eos-icons.css' />
+    <link rel="stylesheet" href="{% static 'css/startmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <title>PyToolbox</title>
+    {% unicorn_scripts %}
+  </head>
+  <body>
+    {% for x in apps %}
+        {% unicorn 'appicon' %}
+    {% endfor %}
+    {% for x in apps %}
+      {% unicorn 'apppanel' name=x.name %}
+    {% endfor %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/microphone.js' %}"></script>
+  </body>
+</html>
