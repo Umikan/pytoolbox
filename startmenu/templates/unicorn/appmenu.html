@@ -1,0 +1,26 @@
+<div>
+  <style>
+    .resume-app {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 840px;
+      height: 450px;
+      padding: 30px;
+    }
+  </style>
+  {% load unicorn %}
+  <div class="resume-app card">
+      <h3 style="padding-bottom: 20px;">続きから再開する</h3>
+      {% for x in apps %} 
+      {% with "selectapp('"|add:x.name|add:"')" as select_func %}
+      <button onclick="{{select_func}}">
+        {% with "/image/"|add:x.icon as src %} {% unicorn 'appicon' src=src %}
+        {% endwith %}
+      </button>
+      {% endwith %}
+      <div id="app-cards">{% unicorn 'apppanel' name=x.name %}</div>
+      {% endfor %}
+  </div>
+</div>

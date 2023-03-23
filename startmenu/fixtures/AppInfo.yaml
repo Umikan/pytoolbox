@@ -3,6 +3,7 @@
   fields:
     name: 'Whisper'
     subtitle: '文字起こしアプリ'
+    icon: 'Whisper.svg'
     description: 
       Whisper is a general-purpose speech recognition model. 
       It is trained on a large dataset of diverse audio 

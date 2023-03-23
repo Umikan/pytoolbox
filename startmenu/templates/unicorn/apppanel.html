@@ -1,16 +1,46 @@
 <div>
+  <style>
+    .apppanel {
+      /* Position Properties */
+      position: absolute;
+      top: 30px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      /* Layout Properties */
+      width: 700px;
+      height: 600px;
+      padding: 32px;
+
+      /* animation properties */
+      transition: all 0.6s;
+      transform: translateY(-140%);
+      visibility: hidden;
+    }
+
+    .apppanel.appcard-slideout {
+      transform: translateY(-140%);
+    }
+
+    .apppanel.appcard-slidein {
+      visibility: visible;
+      transform: translateY(0%);
+    }
+
+  </style>
   {% load unicorn %}
-  <!-- put component code here -->
-  <div class="apppanel">
-    <div style="display: flex; align-items: center;">
-      {% unicorn 'appicon' %}
-      <div style="padding: 0 10px;">
+  <div class="apppanel card" id="{{ name }}">
+    <div style="display: flex; align-items: center; ">
+      <div style="padding-right: 20px;">
+      {% unicorn 'appicon' src=src %}
+      </div>
+      <div>
         <h2>{{ name }}</h2>
         <span> {{ subtitle }} </span>
       </div>
     </div>
-    
-    <div style="display: flex; justify-content: flex-end;">
+
+    <div style="display: flex; justify-content: flex-end">
       <a href="{% url redirect %}" class="common-button fill common-blue">
         Go
         <i class="eos-icons eos-18">double_arrow</i>

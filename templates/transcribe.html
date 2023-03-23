@@ -17,6 +17,7 @@
       <form method="post">
         <label>処理サーバ:
           <input id='server' readonly value={{ server }}>
+          {% csrf_token %}
         </label>
       </form>
     </div>
